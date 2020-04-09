@@ -14,6 +14,8 @@ def printUserStatistics():
     gradesCount = len(studentGrades)
     gradesAvg = sum(studentGrades)/gradesCount
     print(f"{studentName}, you have {gradesCount} grades and your average is {gradesAvg}")
+    print("Your best grade is", sorted(studentGrades, reverse=True)[0])
+    print("Your worst grade is", sorted(studentGrades)[0])
 
 
 print("Welcome to the Grade Sorter App\n")
@@ -64,7 +66,7 @@ print("\n")
 gradesToDelete = validateNumber(
     "How many bad grades do you want to delete", 
     0, 
-    gradesCount, 
+    len(studentGrades) - 1, 
     "You can not do less than 0!", 
     "You don't have this many grades"
 )
